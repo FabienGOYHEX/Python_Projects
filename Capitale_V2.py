@@ -15,17 +15,24 @@
 #
 # 4 questions
 
-def poser_question(question, r1, r2, r3, r4, choix_bonne_reponse):
+def poser_question(question):
+    question_title = question[0]
+    choice = question[1]
+    r1 = choice[0]
+    r2 = choice[1]
+    r3 = choice[2]
+    r4 = choice[3]
+    choix_bonne_reponse = question[2]
     global score
     print("QUESTION")
-    print("  " + question)
+    print("  " + question_title)
     print("  (a)", r1)
     print("  (b)", r2)
     print("  (c)", r3)
     print("  (d)", r4)
     print()
     reponse = input("Votre réponse : ")
-    if reponse == choix_bonne_reponse:
+    if reponse.lower() == choix_bonne_reponse.lower():
         print("Bonne réponse")
         score += 1
     else:
