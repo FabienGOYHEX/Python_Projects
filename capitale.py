@@ -67,23 +67,23 @@ print()
 afficher_table(2,"^", lambda a, b : pow(a, b))
 """
 
-#TUPLE
+# TUPLE
 # Un tupple est un tableau créé avec des parentèses, il est similaire à la liste à la différence qu'il est readunly, il est fixe, on ne peu pas rajouter des éléments
-#Tuple : immutable, modifiable se créé avec des ()
-persones_tuple =("Martin", "Jean", "Pierre", "Didier")
+# Tuple : immutable, modifiable se créé avec des ()
+persones_tuple = ("Martin", "Jean", "Pierre", "Didier")
 
-#LISTE
-#Liste : mutable rajouter /supprimer/ modifier les éléments se créé avec des []
-persones_list =[ "Martin", "Jean", "Pierre", "Didier"]
+# LISTE
+# Liste : mutable rajouter /supprimer/ modifier les éléments se créé avec des []
+persones_list = ["Martin", "Jean", "Pierre", "Didier"]
 
-#print(persones_list) # print la liste de prénom
-#print(len(persones_list))# print le nombre de valeurs présente dans la liste
-#print(persones_list[0]) # print la première valeur présente dans la liste
+# print(persones_list) # print la liste de prénom
+# print(len(persones_list))# print le nombre de valeurs présente dans la liste
+# print(persones_list[0]) # print la première valeur présente dans la liste
 
-#for i in range (0, len(persones_list)): #tu boucles à les valeurs de la liste de 0 au nombre de valeurs présentent dans la liste
+# for i in range (0, len(persones_list)): #tu boucles à les valeurs de la liste de 0 au nombre de valeurs présentent dans la liste
 #    print(persones_list[i]) # à chaque tour tu print la valeur stockée dans i
 
-#La boucle for avec in range met les éléments dans une liste par défaut. Les données étant déjà contenues dans une liste, on peut s'en passer.
+# La boucle for avec in range met les éléments dans une liste par défaut. Les données étant déjà contenues dans une liste, on peut s'en passer.
 """
 for i in persones_list:
     print(i)
@@ -112,16 +112,20 @@ def modifier_valeur(a):
 afficher_personnes(persones_list)
 """
 
+
 def informations_personnes():
     return "Mélanie", 37, 1.54
 
-#def afficher_informations():
+# def afficher_informations():
 #    print("nom : ", nom, "age : ", age, "taille : ", taille)
 # nom , age, taille = informations_personnes()
 
 
 def afficher_informations(nom, age, taille):
     print("nom : ", nom, "age : ", age, "taille : ", taille)
+
+
 infos = informations_personnes()
 
 afficher_informations(*infos)
+print('hello world')
