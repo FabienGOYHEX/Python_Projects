@@ -15,24 +15,30 @@
 #
 # 4 questions
 
-def poser_question(question):
-    question_title = question[0]
+def response_comparator(question):
+    true_response_str = question[2]
     choice = question[1]
-    r1 = choice[0]
-    r2 = choice[1]
-    r3 = choice[2]
-    r4 = choice[3]
-    choix_bonne_reponse = question[2]
+    for i in range(len(choice)):
+        if true_response_str == choice[i]:
+            return i+1
+
+
+def poser_question(question):
+    choice = question[1]
+    bonne_reponse = response_comparator(question)
     global score
+
     print("QUESTION")
-    print("  " + question_title)
-    print("  (a)", r1)
-    print("  (b)", r2)
-    print("  (c)", r3)
-    print("  (d)", r4)
+    print("  ", question[0])
+
+    for i in range(len(choice)):
+        print("", i+1, "-", choice[i])
+
     print()
-    reponse = input("Votre réponse : ")
-    if reponse.lower() == choix_bonne_reponse.lower():
+    reponse_str = input("Votre réponse entre 1 et " + str(len(choice))+":")
+    reponse_int = int(reponse_str)
+
+    if reponse_int == bonne_reponse:
         print("Bonne réponse")
         score += 1
     else:
@@ -59,6 +65,8 @@ question2 = ("Quelle est la capitale de la l'Italie ?",
 
 poser_question(question1)
 poser_question(question2)
+# response_comparator(question1)
+# response_comparator(question2)
 # poser_question("Quelle est la capitale de la France ?",
 #            "Marseille", "Nice", "Paris", "Nantes", "c")
 #poser_question("Quelle est la capitale de l'Italie ?", "Rome", "Venise", "Pise", "Florence", "a")
